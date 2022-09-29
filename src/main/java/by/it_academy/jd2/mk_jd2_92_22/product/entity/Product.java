@@ -1,11 +1,11 @@
 package by.it_academy.jd2.mk_jd2_92_22.product.entity;
 
 public class Product {
-    private final int id;
-    private final String name;
-    private final double cost;
-    private final double discount;
-    private final String description;
+    private int id;
+    private String name;
+    private double cost;
+    private double discount;
+    private String description;
 
     public Product(int id, String name, double cost, double discount, String description) {
         this.id = id;
@@ -13,6 +13,9 @@ public class Product {
         this.cost = cost;
         this.discount = discount;
         this.description = description;
+    }
+
+    public Product() {
     }
 
     public int getId() {

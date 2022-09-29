@@ -34,9 +34,10 @@ public class ProductStorage implements IProductStorage {
     }
 
     @Override
-    public void save(Product product) {
+    public Optional<Product> save(Product product) {
 
         this.data.add(product);
+        return getById(product.getId());
     }
 
     public static ProductStorage getInstance(){

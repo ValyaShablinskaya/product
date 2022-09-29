@@ -6,12 +6,16 @@ import by.it_academy.jd2.mk_jd2_92_22.product.services.exception.EntityAlreadyEx
 import by.it_academy.jd2.mk_jd2_92_22.product.services.exception.EntityNotFoundException;
 import by.it_academy.jd2.mk_jd2_92_22.product.storage.ProductStorage;
 import by.it_academy.jd2.mk_jd2_92_22.product.storage.api.IProductStorage;
+import org.codehaus.jackson.map.ObjectMapper;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 public class ProductServices implements IProductServices {
     private static final ProductServices instance = new ProductServices();
     private final IProductStorage storage;
+
 
     private ProductServices() {
         this.storage = ProductStorage.getInstance();
@@ -50,9 +54,9 @@ public class ProductServices implements IProductServices {
     }
 
     @Override
-    public void add(Product product) {
+    public Product add(Product product) {
         this.validate(product);
-        this.storage.save(product);
+        return storage.save(product).orElseThrow(() -> new EntityNotFoundException("Product not found"));
     }
 
     public static ProductServices getInstance() {

@@ -3,7 +3,6 @@ package by.it_academy.jd2.mk_jd2_92_22.product.controllers;
 import by.it_academy.jd2.mk_jd2_92_22.product.services.ProductServices;
 
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

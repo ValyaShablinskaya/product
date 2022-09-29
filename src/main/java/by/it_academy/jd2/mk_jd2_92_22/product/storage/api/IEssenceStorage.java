@@ -8,5 +8,5 @@ public interface IEssenceStorage<TYPE> {
 
     Optional<TYPE> getById(int id);
 
-    void save(TYPE type);
+    Optional<TYPE> save(TYPE type);
 }
